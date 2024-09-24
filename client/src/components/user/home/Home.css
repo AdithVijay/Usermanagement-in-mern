@@ -1,0 +1,77 @@
+/* Full-screen gradient background */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6A11CB, #2575FC);
+  }
+  
+  /* Profile card styling */
+  .profile-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+  }
+  
+  /* Profile image styling */
+  .profile-img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  /* Title (Welcome text) styling */
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Description text styling */
+  p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Button group */
+  .button-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Button styling */
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Edit Profile Button */
+  .edit-profile-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .edit-profile-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Logout Button */
+  .logout-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c82333;
+  }
+  

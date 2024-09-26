@@ -1,0 +1,132 @@
+/* Main container */
+.unique-admin-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0f0f25;
+    background: linear-gradient(135deg, #1e1e40, #0f0f25);
+    padding: 20px;
+  }
+  
+  .unique-admin-login-left {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    margin-right: 50px;
+  }
+  
+  .unique-admin-login-left h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .unique-admin-login-left p {
+    font-size: 1.3rem;
+    color: #b0b0b5;
+  }
+  
+  .unique-admin-login-right {
+    flex: 1;
+    max-width: 450px;
+    background-color: #1c1c2b;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  
+  /* Form styling */
+  .unique-login-form {
+    width: 100%;
+  }
+  
+  .unique-login-form h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+  }
+  
+  .unique-form-group {
+    margin-bottom: 20px;
+  }
+  
+  .unique-form-group label {
+    color: #fff;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .unique-form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #2b2b3d;
+    color: #fff;
+  }
+  
+  .unique-form-group input::placeholder {
+    color: #c4c4c4;
+  }
+  
+  /* Button styling */
+  .unique-login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .unique-login-btn:hover {
+    background-color: #135dcf;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 1024px) {
+    .unique-admin-login-left {
+      margin-right: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .unique-admin-login-container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .unique-admin-login-left {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  
+    .unique-admin-login-right {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .unique-admin-login-left h1 {
+      font-size: 2rem;
+    }
+  
+    .unique-admin-login-left p {
+      font-size: 1rem;
+    }
+  
+    .unique-admin-login-right {
+      padding: 20px;
+    }
+  
+    .unique-login-form h2 {
+      font-size: 1.5rem;
+    }
+  }
+  

@@ -5,11 +5,11 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 
-const generateToken = (userId) => {
-    return jwt.sign({ id: userId }, process.env.JWT_SECRET, {
-      expiresIn: "30d",
-    });
-  };
+// const generateToken = (userId) => {
+//     return jwt.sign({ id: userId }, process.env.JWT_SECRET, {
+//       expiresIn: "30d",
+//     });
+//   };
 
 const securePassword = async (password) => {
     try {
@@ -49,19 +49,22 @@ const login = async (req,res)=>{
 
         if(user){
             if(await bcrypt.compare(password, user.password)){
-            const token = generateToken(user._id)
-            res.cookie("jwt",token,{
+                console.log("asdasdasdasdas")
+            const token = jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn:"30d"})
+
+            res.cookie("token",token,{
                 httpOnly:true,
-                secure: process.env.NODE_ENV !== "development",
-                sameSite: "strict",
                 maxAge: 30 * 24 * 60 * 60 * 1000,
-            })
-         
+                secure: false,
+                sameSite: 'lax',
+            });
+
             res.json({
                 id: user._id,
                 name: user.name,
                 email: user.email,
-                image: user.profileImage  
+                image: user.profileImage,
+                token:token  
             });
             console.log(user.profileImage);
             }else{
@@ -79,7 +82,7 @@ const updateUser = async(req,res)=>{
     try{
         const {id,email,name} = req.body
          const image = req.file ? `/uploads/${req.file.filename}` : null;
-        // console.log(image);
+        console.log(image);
         
         let updatedData = {}
         const user = await User.findOne({ _id: id });
@@ -92,9 +95,9 @@ const updateUser = async(req,res)=>{
         if(email){
             updatedData.email = email;
         }
-        // if(image){
-        //     updatedData.profileImage = image;
-        // }
+        if(image){
+            updatedData.profileImage = image;
+        }
         const updatedUser = await User.findByIdAndUpdate(id,updatedData)
         res.json({message:"Updation succes", updatedUser})
     }catch(err){
@@ -102,4 +105,15 @@ const updateUser = async(req,res)=>{
     }
 }
 
-module.exports = { signUp,login,updateUser }; 
+const getUserData= async(req,res)=>{
+    try{
+        const id = req.params.id
+        const user =await User.findById(id)
+        res.json(user)
+    }catch(err){
+        console.log(err);
+    }
+}
+
+
+module.exports = { signUp,login,updateUser,getUserData};    

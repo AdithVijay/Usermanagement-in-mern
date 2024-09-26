@@ -7,15 +7,20 @@ import { useDispatch } from 'react-redux';
 
 
 const UserLogin = () => {
+  
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const navigate = useNavigate();
-   const dispatch = useDispatch(); 
+  const dispatch = useDispatch(); 
+
   const handleSubmit =async (e) => {
     e.preventDefault();
     try{
-      const response = await axios.post("http://localhost:3000/user/login",{email,password})
+      const response = await axios.post("http://localhost:3000/user/login",{email,password},{
+        withCredentials:true
+      })
       console.log(response);
+      
       dispatch(addUser(response.data));
        navigate("/home")
     }catch(err){

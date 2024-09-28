@@ -1,0 +1,165 @@
+/* Main container */
+.admin-home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 40px;
+    background-color: #0f0f25;
+    background: linear-gradient(135deg, #1e1e40, #0f0f25); /* Similar gradient to admin login */
+  }
+  
+  /* Left side for welcome text */
+  .admin-home-left {
+    flex: 1;
+    padding: 60px;
+    color: #fff;
+  }
+  
+  .admin-home-left h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .admin-home-left p {
+    font-size: 1.3rem;
+    color: #b0b0b5;
+  }
+  
+  /* Right side for admin info */
+  .admin-home-right {
+    flex: 1;
+    max-width: 450px;
+    background-color: #1c1c2b;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .admin-info h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+  }
+  
+  .admin-info p {
+    font-size: 1.2rem;
+    color: #b0b0b5;
+    margin-bottom: 10px;
+  }
+  
+  .admin-info p strong {
+    color: #fff;
+  }
+  
+  /* Buttons styling */
+  .admin-home-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  /* Button styles */
+  .dashboard-btn, .logout-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dashboard-btn {
+    background-color: #1a73e8;
+    color: #fff;
+  }
+  
+  .dashboard-btn:hover {
+    background-color: #135dcf;
+  }
+  
+  .logout-btn {
+    background-color: #e53935;
+    color: #fff;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c62828;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 1024px) {
+    .admin-home-container {
+      padding: 0 20px;
+    }
+  
+    .admin-home-left h1 {
+      font-size: 2.8rem;
+    }
+  
+    .admin-home-left p {
+      font-size: 1.2rem;
+    }
+  
+    .admin-home-right {
+      padding: 40px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .admin-home-container {
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+    }
+  
+    .admin-home-left, .admin-home-right {
+      flex: unset;
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 30px;
+      padding: 20px;
+    }
+  
+    .admin-home-left h1 {
+      font-size: 2.4rem;
+    }
+  
+    .admin-home-left p {
+      font-size: 1.1rem;
+    }
+  
+    .admin-home-right {
+      box-shadow: none;
+    }
+  
+    .admin-info h2 {
+      font-size: 1.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .admin-home-left h1 {
+      font-size: 2rem;
+    }
+  
+    .admin-home-left p {
+      font-size: 1rem;
+    }
+  
+    .admin-home-right {
+      padding: 20px;
+    }
+  
+    .admin-info h2 {
+      font-size: 1.5rem;
+    }
+  
+    .dashboard-btn, .logout-btn {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  }
+  

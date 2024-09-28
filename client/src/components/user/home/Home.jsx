@@ -16,15 +16,16 @@ const Home = () => {
     // console.log("adith home", homeuser);
 
 
-  function userLogout(){
+ async function userLogout(){
+    await axios.post("http://localhost:3000/user/logout",{},{withCredentials:true})
     dispatch(logoutUser())
     navigate("/login")
   }
 
     
     useEffect(() => {
-      function fetchUser(){
-        axios.get(`http://localhost:3000/user/${homeuser.id}`).then((res)=>{
+     async function fetchUser(){
+       await axios.get(`http://localhost:3000/user/${homeuser.id}`).then((res)=>{
           
           setname(res.data.name)
           setemail(res.data.email)

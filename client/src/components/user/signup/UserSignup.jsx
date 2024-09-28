@@ -16,10 +16,11 @@ const UserSignup = () => {
           const response =await axios.post("http://localhost:3000/user/create",{name,image,email,password},{ headers: {
             'Content-Type': 'multipart/form-data', // Important for file uploads
           }})
+          alert(response.data.message);
           console.log(response.data)
           navigate("/login")
         }catch(err){
-          console.log(err);
+          alert(err.response?.data?.message || 'Something went wrong');
         }
       
       };

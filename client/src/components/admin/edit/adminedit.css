@@ -1,0 +1,81 @@
+/* Admin Edit Page Container */
+.admin-edit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1c1e29; /* Dark background similar to the login page */
+  }
+  
+  /* Card styling for form */
+  .admin-edit-card {
+    background-color: #2b2e44; /* Card dark background */
+    padding: 40px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Form title */
+  .admin-edit-card h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+  }
+  
+  /* Form group */
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* Label styling */
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 8px;
+  }
+  
+  /* Input field */
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    background-color: #383b50;
+    border: 1px solid #44475a;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #000000;
+  }
+  
+  .input-field::placeholder {
+    color: #777;
+  }
+  
+  /* File input styling */
+  .input-file {
+    width: 100%;
+    font-size: 14px;
+    color: #0a0808;
+  }
+  
+  /* Button styles */
+  .btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .submit-btn {
+    background-color: #007bff; /* Blue like the login button */
+    color: white;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  

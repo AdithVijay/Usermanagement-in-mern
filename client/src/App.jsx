@@ -7,6 +7,13 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ProtecHome from './protect/ProtecHome'
 import ProtectEdit from './protect/ProtectEdit'
 import AdminLogin from './components/admin/login/adminLogin'
+import AdminHome from './components/admin/home/AdminHome'
+import AdminDash from './components/admin/dashboard/adminDash'
+import AdminEdit from './components/admin/edit/AdminEdit'
+import AddUser from './components/admin/adduser/AddUser'
+import AdiminAuth from './protect/AdiminAuth'
+import AdminiLoginAuth from './protect/AdminiLoginAuth'
+import PageNot from './protect/notfound/PageNot'
 
 const App = () => {
   return (
@@ -48,12 +55,54 @@ const App = () => {
 
               <Route path='/admin' 
             element={ 
-
-              <AdminLogin/>
-
+              <AdiminAuth>
+                  <AdminLogin/>
+              </AdiminAuth>
               } >
               </Route>
 
+              <Route path='/adminhome' 
+            element={ 
+              <AdminiLoginAuth>
+              <AdminHome/>
+              </AdminiLoginAuth>
+              } >
+              </Route>
+
+              <Route path='/dashboard' 
+            element={ 
+              <AdminiLoginAuth>
+              <AdminDash/>
+              </AdminiLoginAuth>
+              } >
+              </Route>
+
+              <Route path='/adminedit/:id' 
+            element={ 
+              <AdminiLoginAuth>
+              <AdminEdit/>
+              </AdminiLoginAuth>
+              } >
+              </Route>
+
+
+              <Route path='/adminadd' 
+            element={ 
+              <AdminiLoginAuth>
+              <AddUser/>
+              </AdminiLoginAuth>
+              } >
+              </Route>
+
+
+              <Route path='*' 
+            element={ 
+             
+              <PageNot/>
+       
+              } >
+              </Route>
+              
 
         </Routes>
       </BrowserRouter>

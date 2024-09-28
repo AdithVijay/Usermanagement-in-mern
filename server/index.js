@@ -1,4 +1,5 @@
 const userRoute = require("./routes/userRoutes");
+const adminRoute =  require("./routes/adminRoutes");
 const express = require("express")
 const mongoose = require( 'mongoose')
 const cors = require("cors")
@@ -24,6 +25,7 @@ mongoose.connect("mongodb://localhost:27017/UserMangmentReact")
   app.use('/uploads', express.static(path.join(__dirname, 'multer', 'uploads')));
 
 app.use("/user",userRoute)
+app.use("/admin",adminRoute)
 
 app.listen("3000",()=>{
     console.log("server started");

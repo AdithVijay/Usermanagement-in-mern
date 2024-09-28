@@ -1,0 +1,67 @@
+.notfound-page {
+    display: flex;
+    min-height: 100vh;
+    background-color: #0f172a;
+}
+
+.notfound-sidebar {
+    background-color: #1d2b44;
+    width: 40%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.notfound-sidebar h2 {
+    margin-bottom: 10px;
+    font-size: 3rem;
+}
+
+.notfound-sidebar p {
+    color: #9aa5b1;
+    font-size: 1.2rem;
+}
+
+.notfound-container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notfound-box {
+    background-color: #1e2a47;
+    padding: 40px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    color: #fff;
+}
+
+.notfound-box h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.notfound-box p {
+    color: #cbd5e0;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.notfound-btn {
+    padding: 10px 20px;
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.notfound-btn:hover {
+    background-color: #2563eb;
+}

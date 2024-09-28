@@ -19,14 +19,13 @@ const UserLogin = () => {
       const response = await axios.post("http://localhost:3000/user/login",{email,password},{
         withCredentials:true
       })
-      console.log(response);
+            alert(response.data.message);
       
       dispatch(addUser(response.data));
        navigate("/home")
     }catch(err){
-      console.log(err);
+      alert(err.response?.data?.message || 'Something went wrong');
     }
-    
   };
 
   return (
@@ -59,7 +58,7 @@ const UserLogin = () => {
         <button type="submit" className="login-btn">Login</button>
 
         <p className="signup-prompt">
-          Don't have an account? <a href="/signup">Register</a>
+          Don't have an account? <a href="/">Register</a>
         </p>
       </form>
     </div>

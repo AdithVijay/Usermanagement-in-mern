@@ -1,0 +1,93 @@
+.adduser-admin-page {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .adduser-sidebar {
+    background-color: #1d2b44;
+    width: 40%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  .adduser-sidebar h2 {
+    margin-bottom: 10px;
+  }
+  
+  .adduser-sidebar p {
+    color: #9aa5b1;
+  }
+  
+  .adduser-register-container {
+    width: 60%;
+    background-color: #131c33;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .adduser-register-form {
+    background-color: #1e2a47;
+    padding: 40px;
+    border-radius: 10px;
+    width: 300px;
+    color: #fff;
+  }
+  
+  .adduser-register-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .adduser-form-group {
+    margin-bottom: 15px;
+  }
+  
+  .adduser-form-group label {
+    display: block;
+    color: #cbd5e0;
+    margin-bottom: 5px;
+  }
+  
+  .adduser-form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #334e68;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .adduser-register-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .adduser-register-btn:hover {
+    background-color: #2563eb;
+  }
+  
+  .adduser-login-prompt {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .adduser-login-prompt a {
+    color: #3b82f6;
+    text-decoration: none;
+  }
+  
+  .adduser-login-prompt a:hover {
+    text-decoration: underline;
+  }

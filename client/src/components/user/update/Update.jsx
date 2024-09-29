@@ -10,15 +10,10 @@ const Update = () => {
     const [name, setname] = useState("");
     const [email, setemail] = useState("");
     const [image, setProfileImage] = useState(null); 
-
-
-
     const [errors, setErrors] = useState({});
 
-
     const validateForm = () => {
-      const newErrors = {};
-  
+      const newErrors = {};  
       if (!name.trim()) newErrors.name = "Name is required.";
       if (!email.trim()) {
         newErrors.email = "Email is required.";
@@ -26,14 +21,11 @@ const Update = () => {
         newErrors.email = "Email is invalid.";
       }
       if (!image) newErrors.image = "Profile image is required.";
-  
       return newErrors;
     };
 
-
     let id =user.id
-
-
+    
     useEffect(() => {
         function fetchUser(){
           axios.get(`http://localhost:3000/user/${user.id}`).then((res)=>{

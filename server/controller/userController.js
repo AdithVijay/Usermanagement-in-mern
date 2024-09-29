@@ -66,7 +66,6 @@ const login = async (req,res)=>{
                 image: user.profileImage,
                 token: token
               });
-            console.log(user.profileImage);
             }else{
                 res.status(401).json({message: "Invalid email or password"})
             }

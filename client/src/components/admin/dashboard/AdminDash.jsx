@@ -15,7 +15,7 @@ const AdminDash = () => {
   // Search function 
   function searchUser() {
     if (search.trim() === "") {
-      setdisplay([]);
+      setdisplay([])
       return;
     }
     const filteredUsers = user.filter((x) =>

@@ -10,11 +10,29 @@ const Update = () => {
     const [name, setname] = useState("");
     const [email, setemail] = useState("");
     const [image, setProfileImage] = useState(null); 
-    // console.log(image);
 
-    const dispatch = useDispatch()
+
+
+    const [errors, setErrors] = useState({});
+
+
+    const validateForm = () => {
+      const newErrors = {};
+  
+      if (!name.trim()) newErrors.name = "Name is required.";
+      if (!email.trim()) {
+        newErrors.email = "Email is required.";
+      } else if (!/\S+@\S+\.\S+/.test(email)) {
+        newErrors.email = "Email is invalid.";
+      }
+      if (!image) newErrors.image = "Profile image is required.";
+  
+      return newErrors;
+    };
+
+
     let id =user.id
-    // console.log(user);
+
 
     useEffect(() => {
         function fetchUser(){
@@ -32,6 +50,13 @@ const Update = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const validationErrors = validateForm();
+        if (Object.keys(validationErrors).length > 0) {
+          setErrors(validationErrors);
+          return;
+        }
+
         try{
           const response = await axios.put("http://localhost:3000/user/update",{ image, id, name, email },
             {
@@ -63,6 +88,7 @@ const Update = () => {
           value={name}
           onChange={(e)=>setname(e.target.value)}
         />
+         {errors.name && <span className="error">{errors.name}</span>}
       </div>
 
       <div className="form-group">
@@ -75,6 +101,7 @@ const Update = () => {
           onChange={(e)=>setemail(e.target.value)}
           required
         />
+         {errors.email && <span className="error">{errors.email}</span>}
       </div>
 
       <div>
@@ -85,6 +112,7 @@ const Update = () => {
             name="profileImage"
             onChange={(e) => setProfileImage(e.target.files[0])} // Handle image file input
           />
+          {errors.image && <span className="error">{errors.image}</span>}
         </div>
       </div>
       <button type="submit" className="register-btn">Update</button>

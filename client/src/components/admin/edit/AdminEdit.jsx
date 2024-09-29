@@ -13,6 +13,25 @@ const AdminEdit = () => {
   const [image, setProfileImage] = useState(null);
 
 
+  const [errors, setErrors] = useState({});
+
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!name.trim()) newErrors.name = "Name is required.";
+    if (!email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = "Email is invalid.";
+    }
+    if (!image) newErrors.image = "Profile image is required.";
+
+    return newErrors;
+  };
+
+
+
 
   useEffect(() => {
     function fetchUser(){
@@ -33,6 +52,14 @@ const AdminEdit = () => {
   const handleSubmit =async (e) => {
     console.log("profile image check @adminedit",image);
     e.preventDefault();
+
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+
     try{
       const response =await axios.put("http://localhost:3000/admin/update",{image,id,name,email},{
         headers: { 'Content-Type': 'multipart/form-data' },
@@ -60,6 +87,7 @@ const AdminEdit = () => {
               className="input-field"
               placeholder="Enter name"
             />
+              {errors.name && <span className="error">{errors.name}</span>}
           </div>
           <div className="form-group">
             <label>Email</label>
@@ -70,6 +98,7 @@ const AdminEdit = () => {
               className="input-field"
               placeholder="Enter email"
             />
+            {errors.email && <span className="error">{errors.email}</span>}
           </div>
           <div className="form-group">
             <label>Profile Image</label>
@@ -78,6 +107,7 @@ const AdminEdit = () => {
               onChange={(e)=> setProfileImage(e.target.files[0])}
               className="input-file"
             />
+            {errors.image && <span className="error">{errors.image}</span>}
           </div>
           <button type="submit" className="btn submit-btn">Update</button>
         </form>
